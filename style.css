@@ -1,0 +1,25 @@
+html, body {
+  height: 100%;
+  margin: 0; /* Remove margins */
+  padding: 0; /* Remove padding */
+  overflow: hidden; /* Prevent scrolling */
+  box-sizing: border-box;
+  font-size: 16px;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+/* adjust typography defaults */
+body {
+  font-family: sans-serif;
+  line-height: 1.5;
+  margin: 0;
+}
+
+/* images and videos max out at full width */
+img, video {
+  height: auto;
+  max-width: 100%;
+}
