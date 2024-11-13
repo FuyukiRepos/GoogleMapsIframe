@@ -4,7 +4,7 @@ const path = require('path');
 const app = express();
 //const sql = require('mssql')
 
-app.use(express.static('public'));
+app.use(express.static('src'));
 app.use('/dist', express.static(path.join(__dirname, 'dist')));
 
 app.get('/googleapikey', (req, res) => {
