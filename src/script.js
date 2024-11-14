@@ -160,11 +160,11 @@ async function addMarkers(
 
     if (position) {
       const circleMarker = document.createElement("div");
-      circleMarker.style.width = "7px";
-      circleMarker.style.height = "7px";
+      circleMarker.style.width = "11.5px";
+      circleMarker.style.height = "11.5px";
       circleMarker.style.backgroundColor = "white";
       circleMarker.style.borderRadius = "50%";
-      circleMarker.style.border = "2px solid #00008B";
+      circleMarker.style.border = "2px solid #0505b5";
       circleMarker.style.opacity = "1";
 
       const marker = new AdvancedMarkerElement({
