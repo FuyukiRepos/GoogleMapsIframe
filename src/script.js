@@ -2,7 +2,7 @@
 
 
 window.onload = function () {
-  fetch("/api/getGoogleApiKey")
+  fetch("/api/googleapikey")
     .then((response) => response.json())
     .then((data) => {
       const apiKey = data.key;
