@@ -1,6 +1,23 @@
 //import { decode } from "@here/flexpolyline";
 
+window.onload = async function () {
+  try {
+    const response = await fetch("/api/googleapikey");
+    const data = await response.json();
+    const apiKey = data.key;
+    loadGoogleMaps(apiKey);
+  } catch (error) {
+    console.error("Error initializing Google Maps:", error);
+  }
+};
 
+function loadGoogleMaps(apiKey) {
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places&callback=initMap&v=weekly&loading=async`;
+  document.head.appendChild(script);
+}
+
+/**
 window.onload = function () {
   fetch("/api/googleapikey")
     .then((response) => response.json())
@@ -13,6 +30,7 @@ window.onload = function () {
     })
     .catch((error) => console.error("Error fetching Google API key:", error));
 };
+*/
 
 function initMap() {
   // Make sure the map container exists
