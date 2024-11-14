@@ -45,20 +45,17 @@ function initMap() {
     }  
     
     window.addEventListener("message", function(event) {
+    // Ignore messages that don't have polyline or type properties
+    if (!event.data.polyline || !event.data.type) return;
+  
     const { polyline, type } = event.data;
-      
-      console.log("iframe",event.data);
-    
-    let color;
-    if (event.data.type === "polyline2") {
-            color = "#8c1e94"; 
-        }  else {
-            color = "#2149f4"; 
-        }
+    console.log("iframe", event.data);
+
+    let color = type === "polyline2" ? "#8c1e94" : "#2149f4";
     const polylineArray = typeof polyline === 'string' ? polyline.split(",") : polyline;
-      
-    drawPolyline(map, polylineArray, color)
-  });
+
+    drawPolyline(map, polylineArray, color);
+});
     
     
     const states = [];
