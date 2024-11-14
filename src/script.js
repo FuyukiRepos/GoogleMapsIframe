@@ -1,5 +1,6 @@
 //import { decode } from "@here/flexpolyline";
 
+/**
 window.onload = function () {
   fetch("/googleapikey")
     .then((response) => response.json())
@@ -10,6 +11,15 @@ window.onload = function () {
       document.head.appendChild(script);
     })
     .catch((error) => console.error("Error fetching Google API key:", error));
+};
+*/
+
+window.onload = function () {
+  const apiKey = "AIzaSyCPYJy61KGG1xhUmFQMANhJogv6J66lppI"; // Hard-coded API key
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+  script.onload = initMap; 
+  document.head.appendChild(script);
 };
 
 function initMap() {
