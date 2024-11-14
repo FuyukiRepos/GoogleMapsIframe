@@ -9,10 +9,5 @@ module.exports = {
   },
   plugins: [
     new Dotenv(),  // Automatically loads variables from .env
-  ],
-  resolve: {
-    fallback: {
-      "process": require.resolve("process/browser")  // Add fallback for process in browser
-    }
-  }
+  ]
 };
