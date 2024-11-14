@@ -2,22 +2,17 @@
 
 
 window.onload = function () {
-  const apiKey = process.env.googleapikey; 
-  const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-  script.onload = initMap; 
-  document.head.appendChild(script);
+  fetch("/api/getGoogleApiKey")
+    .then((response) => response.json())
+    .then((data) => {
+      const apiKey = data.key;
+      const script = document.createElement("script");
+      script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+      script.onload = initMap; 
+      document.head.appendChild(script);
+    })
+    .catch((error) => console.error("Error fetching Google API key:", error));
 };
-
-/**
-window.onload = function () {
-  const apiKey = "AIzaSyCPYJy61KGG1xhUmFQMANhJogv6J66lppI"; // Hard-coded API key
-  const script = document.createElement("script");
-  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
-  script.onload = initMap; 
-  document.head.appendChild(script);
-};
-*/
 
 function initMap() {
   // Make sure the map container exists
