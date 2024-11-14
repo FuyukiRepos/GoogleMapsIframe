@@ -43,7 +43,7 @@ jobs:
           api_location: "api" # Api source code path - optional
           output_location: "public" # Built app content directory - optional
         env: 
-          googleapikey: AIzaSyCPYJy61KGG1xhUmFQMANhJogv6J66lppI
+          googleapikey: yourapikey
           ###### End of Repository/Build Configurations ######
 
   close_pull_request_job:
