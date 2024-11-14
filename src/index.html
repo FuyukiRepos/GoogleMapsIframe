@@ -4,14 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Google Maps With Here Maps Routing</title>
-    <style>
-        #map {
-    height: 96vh; 
-    width: 100%; 
-    margin: 0; 
-    padding: 0; 
-  }
-    </style>
+      <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      font-family: sans-serif;
+      box-sizing: border-box;
+    }
+
+    *, *:before, *:after {
+      box-sizing: inherit;
+    }
+
+    #mapContainer {
+      height: 100%;
+      width: 100%;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+    }
+
+    #map {
+      height: 100%;
+      width: 100%;
+      border: none;
+    }
+  </style>
 </head>
 <body>
     <div id="map"></div> <!-- Container for the map -->
