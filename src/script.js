@@ -2,15 +2,11 @@
 
 
 window.onload = function () {
-  fetch("/googleapikey")
-    .then((response) => response.json())
-    .then((data) => {
-      const script = document.createElement("script");
-      script.src = `https://maps.googleapis.com/maps/api/js?key=${data.key}&libraries=places`;
-      script.onload = initMap; 
-      document.head.appendChild(script);
-    })
-    .catch((error) => console.error("Error fetching Google API key:", error));
+  const apiKey = process.env.googleapikey; 
+  const script = document.createElement("script");
+  script.src = `https://maps.googleapis.com/maps/api/js?key=${apiKey}&libraries=places`;
+  script.onload = initMap; 
+  document.head.appendChild(script);
 };
 
 /**
