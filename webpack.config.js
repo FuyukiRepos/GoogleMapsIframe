@@ -1,13 +1,16 @@
 const path = require('path');
-const Dotenv = require('dotenv-webpack');
+const webpack = require('webpack');
 
 module.exports = {
-  entry: './src/script.js', // Your entry file (could be script.js)
+  entry: './src/script.js',
   output: {
-    filename: 'bundle.js',  // Output bundled file
+    filename: 'bundle.js',
     path: path.resolve(__dirname, 'dist'),
   },
   plugins: [
-    new Dotenv(),  // Automatically loads variables from .env
-  ]
+    new webpack.DefinePlugin({
+      'process.env.googleapikey': JSON.stringify(process.env.googleapikey),
+    }),
+  ],
 };
+
