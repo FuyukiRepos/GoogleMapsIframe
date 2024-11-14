@@ -49,7 +49,7 @@ function initMap() {
     if (!event.data.polyline || !event.data.type) return;
   
     const { polyline, type } = event.data;
-    console.log("iframe", event.data);
+    //console.log("iframe", event.data);
 
     let color = type === "polyline2" ? "#8c1e94" : "#2149f4";
     const polylineArray = typeof polyline === 'string' ? polyline.split(",") : polyline;
