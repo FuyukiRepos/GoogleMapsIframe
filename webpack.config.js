@@ -1,10 +1,12 @@
-const path = require('path');
+const Dotenv = require('dotenv-webpack');
 
 module.exports = {
-  entry: './src/script.js',  
+  entry: './src/index.js',  // Your main entry file (e.g., script.js)
   output: {
-    path: path.resolve(__dirname, 'dist'),
-    filename: 'bundle.js'
+    filename: 'bundle.js',  // The final output file
+    path: __dirname + '/dist'  // Where the bundled file will be placed
   },
-  mode: 'development',
+  plugins: [
+    new Dotenv()  // Automatically loads environment variables from .env file
+  ]
 };
